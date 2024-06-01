@@ -3,6 +3,7 @@ import itemRouter from "./routes/item_routes";
 import cors from "cors";
 import { errorHandlerMiddleware } from "./controllers/errors";
 import item_image_upload_router from "./routes/item_image_upload";
+import authRouter from "./routes/auth";
 const app = Express();
 
 app.get("/", (req, res) => {
@@ -14,6 +15,7 @@ app.use("/uploads", Express.static("uploads"));
 
 app.use("/api/items", itemRouter);
 app.use("/api/upload", item_image_upload_router);
+app.use("/api", authRouter);
 
 app.use(errorHandlerMiddleware);
 export default app;
