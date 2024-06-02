@@ -5,10 +5,11 @@ import {
   updateItem,
 } from "../controllers/item_controller";
 import { getItems, addItem } from "../controllers/item_controller";
+import protectedRoute from "./../controllers/authurization_controller";
 
 const itemRouter = Express.Router();
 
-itemRouter.route("/").get(getItems).post(addItem);
+itemRouter.route("/").get(getItems).post(protectedRoute, addItem);
 itemRouter.route("/:id").put(updateItem).delete(deleteItem).get(getItem);
 
 export default itemRouter;

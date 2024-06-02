@@ -10,6 +10,7 @@ export interface UserDocument extends Document {
   role: string;
   active: boolean;
   photo: string;
+  checkPassword(password: string, hashedPassword: string): Promise<boolean>;
 }
 
 export interface UserModel extends Model<UserDocument> {
@@ -76,6 +77,13 @@ userSchema.pre("save", async function (next) {
   this.passwordConfirm = undefined;
   next();
 });
+
+userSchema.methods.checkPassword = function (
+  password: string,
+  hashedPassword: string
+): Promise<boolean> {
+  return bcrypt.compare(password, hashedPassword);
+};
 
 const User = mongoose.model<UserDocument, UserModel>("User", userSchema);
 
