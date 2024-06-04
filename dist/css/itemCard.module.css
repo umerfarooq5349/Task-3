@@ -1,0 +1,98 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  filter: brightness(90%);
+}
+
+.content {
+  padding: 16px;
+}
+
+.itemImage {
+  object-fit: cover;
+  width: 270px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.itemName,
+.itemBrand {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.itemPrice {
+  font-size: 1.5rem;
+  color: #00bfff;
+  margin: 8px 0;
+}
+
+.inStock,
+.outOfStock {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.inStock {
+  color: green;
+}
+
+.outOfStock {
+  color: red;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    padding: 2px;
+    margin: 4px;
+  }
+  .buttons .delete {
+    margin-top: 1rem;
+  }
+}
+
+.seeMore,
+.delete {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.seeMore:hover,
+.delete:hover {
+  filter: brightness(90%);
+}
+
+.seeMore {
+  background-color: #00bfff;
+  color: #fff;
+}
+
+.delete {
+  background-color: #dc3545;
+  color: #fff;
+}/*# sourceMappingURL=itemCard.module.css.map */

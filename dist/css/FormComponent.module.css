@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap");
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+}
+.form label {
+  position: relative;
+  flex: 1;
+}
+.form label .input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 5px 5px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: medium;
+}
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+.form label .input:focus + span, .form label .input:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.form label .input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+.form .thumbnail_preview {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  border: 2px solid rgba(105, 105, 105, 0.397);
+  object-fit: cover;
+  align-self: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #00bfff;
+}
+.title::before, .title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #00bfff;
+}
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+  -webkit-animation: pulse 1s linear infinite;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+.flex .input {
+  flex: 1;
+}
+.flex label {
+  flex: 1;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.flexCenter .centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s ease;
+  background-color: #00bfff;
+}
+.submit:hover {
+  background-color: rgba(0, 191, 255, 0.5882352941);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=FormComponent.module.css.map */

@@ -3,13 +3,18 @@ import catchAsync from "../utils/catchAsync";
 import jwt from "jsonwebtoken";
 import AppError from "./appErros";
 import { promisify } from "util";
+import { NextFunction, Request, Response } from "express";
+
+interface AuthenticatedRequest extends Request {
+  user?: any; // Define a more specific user type if available
+}
 
 const protectedRoute = catchAsync(async (req, res, next) => {
   //geting token and check it is textUnderlinePosition:
   let token;
   if (
     req.headers.authorization &&
-    req.headers.authorization.startsWith("some")
+    req.headers.authorization.startsWith("Bearer")
   ) {
     token = req.headers.authorization.split(" ")[1];
   }
@@ -35,4 +40,15 @@ const protectedRoute = catchAsync(async (req, res, next) => {
   next();
 });
 
-export default protectedRoute;
+const restrictTo = (...roles: string[]) => {
+  return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError("You are not authorized to perform this action", 403)
+      );
+    }
+    next();
+  };
+};
+
+export { protectedRoute, restrictTo };

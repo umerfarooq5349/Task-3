@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap");
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+.container h1 {
+  padding: 20px 0;
+}
+.container .body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .container .body {
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+.sidebar {
+  color: #fff;
+  width: 300px;
+  z-index: 1;
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 50%;
+    height: auto;
+    bottom: auto;
+    top: 0;
+    left: 0;
+  }
+}
+
+.sidebarclose {
+  display: none;
+}/*# sourceMappingURL=total-Items.module.css.map */

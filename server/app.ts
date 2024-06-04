@@ -6,10 +6,16 @@ import item_image_upload_router from "./routes/item_image_upload";
 import authRouter from "./routes/auth";
 const app = Express();
 
+const corsOptions = {
+  origin: "http://localhost:3000", // Allow requests from this origin
+  credentials: true, // Allow cookies to be sent
+};
+
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
-app.use(cors());
+
+app.use(cors(corsOptions));
 app.use(Express.json());
 app.use("/uploads", Express.static("uploads"));
 

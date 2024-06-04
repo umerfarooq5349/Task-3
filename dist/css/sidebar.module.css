@@ -1,0 +1,97 @@
+.container {
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(79, 107, 95);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto;
+    padding: 10px;
+    border-radius: 0;
+  }
+}
+.container .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.container .product .title {
+  margin: 0;
+}
+.container .thumbnail {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+  .container .thumbnail {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
+.container .details {
+  width: 100%;
+}
+.container .details .group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .container .details .group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+.container .details .group .subGroup {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .container .details .group .subGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.container .details .group .subGroup .head {
+  font-weight: bold;
+}
+.container .details .group .subGroup .body {
+  font-weight: normal;
+}
+.container .details .description {
+  margin-bottom: 30px;
+}
+.container .details .description .head {
+  font-weight: bold;
+  align-items: flex-start;
+  text-align: start;
+  margin-bottom: 8px;
+}
+.container .details .description .body {
+  text-align: start;
+}
+.container .title {
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  .container .title {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=sidebar.module.css.map */

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap");
+.container {
+  background-color: rgba(26, 26, 26, 0.4549019608);
+  color: #00bfff;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.container .body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}/*# sourceMappingURL=navbar.module.css.map */
