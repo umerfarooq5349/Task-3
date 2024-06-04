@@ -15,7 +15,10 @@ const itemRouter = Express.Router();
 itemRouter.route("/").get(getItems).post(protectedRoute, addItem);
 itemRouter
   .route("/:id")
-  .put(restrictTo("admin"), updateItem)
+  .put(
+    // restrictTo("admin"),
+    updateItem
+  )
   .delete(deleteItem)
   .get(getItem);
 
