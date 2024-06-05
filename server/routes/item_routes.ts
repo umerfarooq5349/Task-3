@@ -12,7 +12,10 @@ import {
 
 const itemRouter = Express.Router();
 
-itemRouter.route("/").get(getItems).post(protectedRoute, addItem);
+itemRouter.route("/").get(getItems).post(
+  // protectedRoute,
+  addItem
+);
 itemRouter
   .route("/:id")
   .put(
